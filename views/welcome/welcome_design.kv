@@ -1,0 +1,15 @@
+#:kivy 2.0.0
+#:import utils kivy.utils
+
+<WelcomeView>
+	greating:greating_lbl
+	canvas.before:
+		Color:
+			rgba:utils.get_color_from_hex("#001219")
+		Rectangle:
+			pos:self.pos
+			size:self.size
+
+	Label:
+		id:greating_lbl
+		text:"Welcome "

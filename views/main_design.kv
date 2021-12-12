@@ -1,0 +1,11 @@
+#:kivy 2.0.0
+#:import utils kivy.utils
+
+<WindowManager>
+	canvas.before:
+		Color:
+			rgba:utils.get_color_from_hex("#001219")
+		Rectangle:
+			pos:self.pos
+			size:self.size
+

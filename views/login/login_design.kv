@@ -1,0 +1,94 @@
+#:kivy 2.0.0
+#:import utils kivy.utils
+
+<TxtInputLogin@TextInput>
+	size_hint:(None,None)
+	width:200
+	height:30
+	pos_hint:{"center_x":0.5}
+	halign:"center"
+<LblLogin@Label>
+	size_hint:(None,None)
+	width:200
+	height:25
+	pos_hint:{"center_x":0.5}
+
+<LoginView>
+	canvas.before:
+		Color:
+			rgba:utils.get_color_from_hex("#001219")
+		Rectangle:
+			pos:self.pos
+			size:self.size
+	
+	username:input_username
+	password:input_password
+	password2:input_password2
+	status:label_status
+	login_btn:button_login
+
+	BoxLayout:
+		orientation:"vertical"
+		size:root.width,root.height
+		padding:25
+		spacing:25
+
+		LblLogin:
+			text:"Login"
+			color:utils.get_color_from_hex("#001219")
+			bold:True
+			font_size:70
+			outline_color:utils.get_color_from_hex("#E63946")
+			outline_width:2
+			size_hint:(None,None)
+			width:300
+			height:100
+			pos_hint:{"center_x":0.5}
+
+		BoxLayout:
+
+			orientation:"vertical"
+			size: root.width,root.height
+			padding:15
+			spacing:15
+
+			LblLogin:
+				text:"Username"
+			TxtInputLogin:
+				id:input_username
+				multiline:False
+
+			LblLogin:
+				text:"Password"
+			TxtInputLogin:
+				id:input_password
+				password:True
+				allow_copy:False
+				multiline:False
+
+			LblLogin:
+				text:"Repeat Password"
+			TxtInputLogin:
+				id:input_password2
+				password:True
+				allow_copy:False
+				multiline:False
+
+			LblLogin:
+				id:label_status
+				text:""
+				height:10
+				font_size:12
+				bold:True
+
+		Button:
+			id:button_login
+			text:"Join"
+			size_hint:(None,None)
+			width:200
+			height:50
+			pos_hint:{"center_x":0.5}
+			background_normal:""
+			background_color:utils.get_color_from_hex("#00A6A6")
+
+
